@@ -9,18 +9,18 @@ function run(msg, matches)
 
 for i=1, tex, 1 do
 
-اسپام = '\n'..sps..'\n'..sp
+sp = '\n'..sps..'\n'..sp
 i = i + 1
 
 end
 
-return اسپام
+return sp
 
 end
 
 return {
     patterns = {
-      "اسپام (.*) (.*)$"
+      "spam (.*) (.*)$"
     },
     run = run,
 }
