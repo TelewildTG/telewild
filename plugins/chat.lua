@@ -12,10 +12,10 @@ if msg.text == "hello" then
 	return "Hi honey"
 end
 if msg.text == "Salam" then
-	return "Salam"
+	return "سلام"
 end
 if msg.text == "salam" then
-	return "salam"
+	return "سلام"
 end
 if msg.text == "ali" then
 	return "با بابایی من چیکار داری"
@@ -27,19 +27,19 @@ if msg.text == "ALI" then
 	return "با بابایی من چیکار داری"
 end
 if msg.text == "Telewild" then
-	return "jun?"
+	return "جووووون"
 end
 if msg.text == "telewild" then
-	return "jun?"
+	return "جونم"
 end
 if msg.text == "Ashrar" then
-	return "اه اه کس ننشون"
+	return "!"
 end
 if msg.text == "ashrar" then
-	return "اه اه کس ننشون"
+	return "!"
 end
 if msg.text == "ASHRAR" then
-	return "اه اه کس ننشون"
+	return "!"
 end
 if msg.text == "Dark" then
 	return "با جیگرای من چیکار داری"
