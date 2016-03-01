@@ -437,7 +437,7 @@ local function cleanmember(cb_extra, success, result)
   local chatname = result.print_name
   if success == -1 then
     return send_large_msg(receiver, 'خطایی رخ داده است : لینک بدست نمی آید 
-علت : سازنده نبودن.'
+علت : سازنده نبودن.')
   end
   for k,v in pairs(result.members) do
     kick_user(v.id, result.id)     
@@ -708,22 +708,22 @@ local function run(msg, matches)
         return unlock_group_bots(msg, data, target)
       end
     end
-    if matches[1] == 'تنظیمات' then
+    if matches[1] == 'settings' then
       local target = msg.to.id
       savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested group settings ")
       return show_group_settingsmod(msg, data, target)
     end
-    if matches[1] == 'لینک جدید' then
+    if matches[1] == 'newlink' then
       if not is_momod(msg) then
-        return "For moderators only!"
+        return "فقط برای مدیران!""
       end
       local function callback (extra , success, result)
         local receiver = 'chat#'..msg.to.id
         if success == 0 then
            return send_large_msg(receiver, 'خطایی رخ داده است : لینک بدست نمی آید 
-علت : سازنده نبودن.'
+علت : سازنده نبودن.')
         end
-        send_large_msg(receiver, "Created a new link")
+        send_large_msg(receiver, "لینک جدید ساخته شد")
         data[tostring(msg.to.id)]['settings']['set_link'] = result
         save_data(_config.moderation.data, data)
       end
@@ -733,7 +733,7 @@ local function run(msg, matches)
     end
     if matches[1] == 'لینک در خصوصی' then
       if not is_momod(msg) then
-        return "For moderators only!"
+        return "فقط برای مدیران!"
       end
       local group_link = data[tostring(msg.to.id)]['settings']['set_link']
       if not group_link then 
@@ -752,7 +752,7 @@ local function run(msg, matches)
       local text = matches[2].." added as owner"
       return text
     end
-    if matches[1] == 'مالک' then
+    if matches[1] == 'owner' then
       local group_owner = data[tostring(msg.to.id)]['set_owner']
       if not group_owner then 
         return "no owner,ask admins in support groups to set owner for your group"
@@ -760,7 +760,7 @@ local function run(msg, matches)
       savelog(msg.to.id, name_log.." ["..msg.from.id.."] used /owner")
       return "Group owner is ["..group_owner..']'
     end
-    if matches[1] == 'نصب مالک' then
+    if matches[1] == 'setgpowner' then
       local receiver = "chat#id"..matches[2]
       if not is_admin(msg) then
         return "For admins only!"
@@ -771,7 +771,7 @@ local function run(msg, matches)
       send_large_msg(receiver, text)
       return
     end
-    if matches[1] == 'حساسیت اسپم' then 
+    if matches[1] == 'setflood' then 
       if not is_momod(msg) then
         return "For moderators only!"
       end
@@ -784,7 +784,7 @@ local function run(msg, matches)
       savelog(msg.to.id, name_log.." ["..msg.from.id.."] set flood to ["..matches[2].."]")
       return 'Group flood has been set to '..matches[2]
     end
-    if matches[1] == 'پاک کردن' then
+    if matches[1] == 'clean' then
       if not is_owner(msg) then
         return "Only owner can clean"
       end
@@ -795,7 +795,7 @@ local function run(msg, matches)
         local receiver = get_receiver(msg)
         chat_info(receiver, cleanmember, {receiver=receiver})
       end
-      if matches[2] == 'لیست مدیران' then
+      if matches[2] == 'modlist' then
         if next(data[tostring(msg.to.id)]['moderators']) == nil then --fix way
           return 'No moderator in this group.'
         end
@@ -806,13 +806,13 @@ local function run(msg, matches)
         end
         savelog(msg.to.id, name_log.." ["..msg.from.id.."] cleaned modlist")
       end
-      if matches[2] == 'قوانین' then 
+      if matches[2] == 'rules' then 
         local data_cat = 'rules'
         data[tostring(msg.to.id)][data_cat] = nil
         save_data(_config.moderation.data, data)
         savelog(msg.to.id, name_log.." ["..msg.from.id.."] cleaned rules")
       end
-      if matches[2] == 'توضیحات' then 
+      if matches[2] == 'about' then 
         local data_cat = 'description'
         data[tostring(msg.to.id)][data_cat] = nil
         save_data(_config.moderation.data, data)
@@ -820,7 +820,7 @@ local function run(msg, matches)
       end     
     end
       
-    if matches[1] == 'راهنما' then
+    if matches[1] == 'help' then
       if not is_momod(msg) then
         return
       end
