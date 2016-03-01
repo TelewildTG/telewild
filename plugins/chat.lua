@@ -51,16 +51,17 @@ if msg.text == "DARK" then
 	return "با جیگرای من چیکار داری"
 end
 if msg.text == "SUDO" then
-	return "xXx_ASHRAR_xXx & @S1KT1R"
+	return "لیست مدیران اصلیه ربات و سازندگان
+	@xXx_ASHRAR_xXx & @S1KT1R"
 end
 if msg.text == "bot" then
-	return "هان?"
+	return "هان"
 end
 if msg.text == "Bot" then
-	return "هااا?"
+	return "هااا"
 end
 if msg.text == "?" then
-	return "هوووم??"
+	return "هوووم"
 end
 if msg.text == "Bye" then
 	return "بای بای"
