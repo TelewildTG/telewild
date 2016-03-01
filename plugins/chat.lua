@@ -17,15 +17,6 @@ end
 if msg.text == "salam" then
 	return "salam"
 end
-if msg.text == "sudo" then
-	return "xXx_ASHRAR_xXx & @S1KT1R"
-end
-if msg.text == "Sudo" then
-	return "xXx_ASHRAR_xXx & @S1KT1R"
-end
-if msg.text == "SUDO" then
-	return "xXx_ASHRAR_xXx & @S1KT1R"
-end
 if msg.text == "ali" then
 	return "با بابایی من چیکار داری"
 end
@@ -36,28 +27,40 @@ if msg.text == "ALI" then
 	return "با بابایی من چیکار داری"
 end
 if msg.text == "Telewild" then
-	return "جونم?"
+	return "jun?"
 end
 if msg.text == "telewild" then
-	return "جونم?"
+	return "jun?"
 end
 if msg.text == "Ashrar" then
 	return "اه اه کس ننشون"
 end
 if msg.text == "ashrar" then
-	return "کس ننه بدخواهش"
+	return "اه اه کس ننشون"
 end
 if msg.text == "ASHRAR" then
-	return ""کس ننه بدخواهش
+	return "اه اه کس ننشون"
+end
+if msg.text == "Dark" then
+	return "با جیگرای من چیکار داری"
+end
+if msg.text == "dark" then
+	return "با جیگرای من چیکار داری"
+end
+if msg.text == "DARK" then
+	return "با جیگرای من چیکار داری"
+end
+if msg.text == "SUDO" then
+	return "xXx_ASHRAR_xXx & @S1KT1R"
 end
 if msg.text == "bot" then
 	return "هان?"
 end
 if msg.text == "Bot" then
-	return "هاااا?"
+	return "هااا?"
 end
 if msg.text == "?" then
-	return "هوم??"
+	return "هوووم??"
 end
 if msg.text == "Bye" then
 	return "بای بای"
@@ -74,10 +77,12 @@ return {
 		"^[Hh]i$",
 		"^[Hh]ello$",
 		"^[Aa]li$",
+		"^[Dd]ark$",
 		"^[Aa]shrar$",
-		"^[Ss]udo$",
+		"^[Aa]liDark$",
 	        "^ALI$",
 	        "^SUDO$",
+	        "^DARK$",
 	        "^ASHRAR$",
 		"^[Bb]ot$",
 		"^[Tt]elewild$",
