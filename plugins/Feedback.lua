@@ -29,11 +29,11 @@ end
 
 end
 return {
-  description = "Feedback",
+  description = "ارسال به ادمین",
 
-  usage = "!feedback : send maseage to admins with bot",
+  usage = "ارسال به ادمین : send maseage to admins with bot",
   patterns = {
-    "^![Ff]eedback (.*)$"
+    "^ارسال به ادمین (.*)$"
 
   },
   run = run
