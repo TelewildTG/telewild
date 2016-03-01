@@ -436,8 +436,7 @@ local function cleanmember(cb_extra, success, result)
   local chat_id = "chat#id"..result.id
   local chatname = result.print_name
   if success == -1 then
-    return send_large_msg(receiver, 'خطایی رخ داده است : لینک بدست نمی آید 
-علت : سازنده نبودن.')
+    return send_large_msg(receiver, '*Error: Invite link failed* \nReason: Not creator.')
   end
   for k,v in pairs(result.members) do
     kick_user(v.id, result.id)     
@@ -713,17 +712,16 @@ local function run(msg, matches)
       savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested group settings ")
       return show_group_settingsmod(msg, data, target)
     end
-    if matches[1] == 'newlink' then
+    if matches[1] == 'لینک جدید' then
       if not is_momod(msg) then
-        return "فقط برای مدیران!""
+        return "For moderators only!"
       end
       local function callback (extra , success, result)
         local receiver = 'chat#'..msg.to.id
         if success == 0 then
-           return send_large_msg(receiver, 'خطایی رخ داده است : لینک بدست نمی آید 
-علت : سازنده نبودن.')
+           return send_large_msg(receiver, '*Error: Invite link failed* \nReason: Not creator.')
         end
-        send_large_msg(receiver, "لینک جدید ساخته شد")
+        send_large_msg(receiver, "Created a new link")
         data[tostring(msg.to.id)]['settings']['set_link'] = result
         save_data(_config.moderation.data, data)
       end
@@ -731,13 +729,13 @@ local function run(msg, matches)
       savelog(msg.to.id, name_log.." ["..msg.from.id.."] revoked group link ")
       return export_chat_link(receiver, callback, true)
     end
-    if matches[1] == 'لینک در خصوصی' then
+    if matches[1] == 'لینک پی وی)' then
       if not is_momod(msg) then
-        return "فقط برای مدیران!"
+        return "For moderators only!"
       end
       local group_link = data[tostring(msg.to.id)]['settings']['set_link']
       if not group_link then 
-        return "ابتدا با دستور *لینک جدید* یک لینک جدید بسازید"
+        return "Create a link using /newlink first !"
       end
        savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested group link ["..group_link.."]")
      send_large_msg('user#id'..msg.from.id, "Group link:\n"..group_link)
@@ -840,7 +838,7 @@ local function run(msg, matches)
 end
 return {
   patterns = {
-  "^(لینک در خصوصی)$",
+  "^(لینک پی وی)$",
   "%[(photo)%]",
   "^!!tgservice (.+)$",
   },
