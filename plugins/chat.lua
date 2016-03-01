@@ -50,18 +50,6 @@ end
 if msg.text == "ASHRAR" then
 	return ""کس ننه بدخواهش
 end
-if msg.text == "Dark" then
-	return "!"
-end
-if msg.text == "dark" then
-	return "!"
-end
-if msg.text == "DARK" then
-	return "!"
-end
-if msg.text == "Ali Dark" then
-	return "هان چیکارش داری بابامو ؟"
-end
 if msg.text == "bot" then
 	return "هان?"
 end
@@ -86,12 +74,9 @@ return {
 		"^[Hh]i$",
 		"^[Hh]ello$",
 		"^[Aa]li$",
-		"^[Dd]ark$",
 		"^[Aa]shrar$",
-		"^[Aa]liDark$",
 		"^[Ss]udo$",
 	        "^ALI$",
-	        "^DARK$",
 	        "^SUDO$",
 	        "^ASHRAR$",
 		"^[Bb]ot$",
