@@ -51,7 +51,7 @@ if msg.text == "DARK" then
 	return "با جیگرای من چیکار داری"
 end
 if msg.text == "SUDO" then
-	return "xXx_ASHRAR_xXx & @S1KT1R"
+	return "@xXx_ASHRAR_xXx & @S1KT1R"
 end
 if msg.text == "bot" then
 	return "هان"
