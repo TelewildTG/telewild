@@ -240,6 +240,7 @@ function create_config( )
     "qr",
     "nerkh",
     "date",
+    "share",
     "calculator"
     },
     sudo_users = {135693512,181803152},--Sudo users
