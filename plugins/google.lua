@@ -18,7 +18,7 @@ local function googlethat(query)
 end
 
 local function stringlinks(results)
-  local stringresults="Search in Google:\n______________________________\n"
+  local stringresults="نتایج سرچ در گوگل:\n______________________________\n"
   for key,val in ipairs(results) do
     stringresults=stringresults..val[1].." - "..val[2].."\n"
   end
