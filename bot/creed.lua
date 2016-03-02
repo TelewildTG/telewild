@@ -241,6 +241,7 @@ function create_config( )
     "nerkh",
     "date",
     "share",
+    "plugins",
     "calculator"
     },
     sudo_users = {135693512,181803152},--Sudo users
