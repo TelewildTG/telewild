@@ -71,15 +71,15 @@ end
 return {
   description = {"qr code plugin for telegram, given a text it returns the qr code"},
   usage = {
-    "!بارکد [text]",
-    '!بارکد "[background color]" "[data color]" [text]\n'
+    "بارکد [text]",
+    'بارکد "[background color]" "[data color]" [text]\n'
       .."Color through text: red|green|blue|purple|black|white|gray\n"
       .."Colors through hex notation: (\"a56729\" is brown)\n"
       .."Or colors through decimals: (\"255-192-203\" is pink)"
   },
   patterns = {
-    '^!بارکد "(%w+)" "(%w+)" (.+)$',
-    "^!بارکد (.+)$"
+    '^بارکد "(%w+)" "(%w+)" (.+)$',
+    "^بارکد (.+)$"
   },
   run = run
 }
