@@ -707,7 +707,7 @@ local function run(msg, matches)
         return unlock_group_bots(msg, data, target)
       end
     end
-    if matches[1] == 'settings' then
+    if matches[1] == 'تنظیمات' then
       local target = msg.to.id
       savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested group settings ")
       return show_group_settingsmod(msg, data, target)
@@ -729,7 +729,7 @@ local function run(msg, matches)
       savelog(msg.to.id, name_log.." ["..msg.from.id.."] revoked group link ")
       return export_chat_link(receiver, callback, true)
     end
-    if matches[1] == 'لینک پی وی)' then
+    if matches[1] == 'لینک در خصوصی' then
       if not is_momod(msg) then
         return "For moderators only!"
       end
@@ -740,7 +740,7 @@ local function run(msg, matches)
        savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested group link ["..group_link.."]")
      send_large_msg('user#id'..msg.from.id, "Group link:\n"..group_link)
     end
-    if matches[1] == 'setowner' then
+    if matches[1] == 'نصب مالک' then
       if not is_owner(msg) then
         return "For owner only!"
       end
@@ -750,7 +750,7 @@ local function run(msg, matches)
       local text = matches[2].." added as owner"
       return text
     end
-    if matches[1] == 'owner' then
+    if matches[1] == 'مالک' then
       local group_owner = data[tostring(msg.to.id)]['set_owner']
       if not group_owner then 
         return "no owner,ask admins in support groups to set owner for your group"
@@ -758,7 +758,7 @@ local function run(msg, matches)
       savelog(msg.to.id, name_log.." ["..msg.from.id.."] used /owner")
       return "Group owner is ["..group_owner..']'
     end
-    if matches[1] == 'setgpowner' then
+    if matches[1] == 'نصب مالک' then
       local receiver = "chat#id"..matches[2]
       if not is_admin(msg) then
         return "For admins only!"
@@ -769,7 +769,7 @@ local function run(msg, matches)
       send_large_msg(receiver, text)
       return
     end
-    if matches[1] == 'setflood' then 
+    if matches[1] == 'حساسیت اسپم' then 
       if not is_momod(msg) then
         return "For moderators only!"
       end
@@ -793,7 +793,7 @@ local function run(msg, matches)
         local receiver = get_receiver(msg)
         chat_info(receiver, cleanmember, {receiver=receiver})
       end
-      if matches[2] == 'modlist' then
+      if matches[2] == 'لیست مدیران' then
         if next(data[tostring(msg.to.id)]['moderators']) == nil then --fix way
           return 'No moderator in this group.'
         end
@@ -804,13 +804,13 @@ local function run(msg, matches)
         end
         savelog(msg.to.id, name_log.." ["..msg.from.id.."] cleaned modlist")
       end
-      if matches[2] == 'rules' then 
+      if matches[2] == 'قوانین' then 
         local data_cat = 'rules'
         data[tostring(msg.to.id)][data_cat] = nil
         save_data(_config.moderation.data, data)
         savelog(msg.to.id, name_log.." ["..msg.from.id.."] cleaned rules")
       end
-      if matches[2] == 'about' then 
+      if matches[2] == 'توضیحات' then 
         local data_cat = 'description'
         data[tostring(msg.to.id)][data_cat] = nil
         save_data(_config.moderation.data, data)
@@ -818,7 +818,7 @@ local function run(msg, matches)
       end     
     end
       
-    if matches[1] == 'help' then
+    if matches[1] == 'راهنما' then
       if not is_momod(msg) then
         return
       end
@@ -838,7 +838,7 @@ local function run(msg, matches)
 end
 return {
   patterns = {
-  "^(لینک پی وی)$",
+  "^(لینک در خصوصی)$",
   "%[(photo)%]",
   "^!!tgservice (.+)$",
   },
