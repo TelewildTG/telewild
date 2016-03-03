@@ -239,11 +239,11 @@ function create_config( )
     "linkpv",
     "qr",
     "nerkh",
-    "date",
+    "calculator",
+     "date",
     "share",
     "plugins",
-    "time",
-    "calculator"
+    "time"
     },
     sudo_users = {135693512,181803152},--Sudo users
     disabled_channels = {},
