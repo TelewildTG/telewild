@@ -245,6 +245,7 @@ function create_config( )
     "plugins",
     "time",
     "dictionary",
+    "quran"
     },
     sudo_users = {135693512,181803152},--Sudo users
     disabled_channels = {},
