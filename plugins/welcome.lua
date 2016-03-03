@@ -56,18 +56,18 @@ local function description_rules(msg, nama)
       end
       if data[tostring(msg.to.id)]["rules"] then
          rules = data[tostring(msg.to.id)]["rules"]
-         rules = "\nقوانین :\n"..rules.."\n"
+         rules = "\nفوانین:\n"..rules.."\n"
       end
       local sambutan = "سلام "..nama.."\خوش آمدی به '"..string.gsub(msg.to.print_name, "_", " ").."'\nامیدوارم که به قوانین عمل کنی ⭐️\n
       local text = sambutan..about..rules.."\n"
       local receiver = get_receiver(msg)
       send_large_msg(receiver, text, ok_cb, false)
-   end
+  end
 end
 
 local function run(msg, matches)
    if not msg.service then
-      return "Are you trying to troll me?"
+      return "کیو خر میکنی ؟"
    end
    --vardump(msg)
    if matches[1] == "chat_add_user" then
@@ -88,7 +88,7 @@ local function run(msg, matches)
       description_rules(msg, nama)
    elseif matches[1] == "chat_del_user" then
        local bye_name = msg.action.user.first_name
-       return 'به سلامت '..bye_name
+       return 'به سلامت  '..bye_name
    end
 end
 
