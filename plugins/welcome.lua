@@ -58,7 +58,7 @@ local function description_rules(msg, nama)
          rules = data[tostring(msg.to.id)]["rules"]
          rules = "\nفوانین:\n"..rules.."\n"
       end
-      local sambutan = "سلام "..nama.."\nخوشومدی به  '"..string.gsub(msg.to.print_name, "_", " ").."'\nامیدوارم که بهت خوشبگذره و به قوانین گروه احترام بگذاری\n"
+      local sambutan = "سلام "..nama.."\nخوشومدی به  '"..string.gsub(msg.to.print_name, "_", " ").."'\n⭐️ امید وارم که به قوانین عمل کنی\n"
       local text = sambutan..about..rules.."\n"
       local receiver = get_receiver(msg)
       send_large_msg(receiver, text, ok_cb, false)
