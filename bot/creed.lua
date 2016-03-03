@@ -240,7 +240,7 @@ function create_config( )
     "qr",
     "nerkh",
     "calculator",
-     "date",
+    "date",
     "share",
     "plugins",
     "time",
