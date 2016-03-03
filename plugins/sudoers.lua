@@ -136,7 +136,7 @@ local function run(msg,matches)
     end
     if matches[1] == "پیام به" then
     	send_large_msg("user#id"..matches[2],matches[3])
-    	return "پیام شما ارسال شد و اگر مشکلی در ارسال پیام دیده اید شماره ی ربات را ادد کنید"
+    	return "پیام شما ارسال شد اگر مشکلی در ارسال پیام بوده است بخاطر ریپورت بودن ربات است."
     end
     if matches[1] == "بلاک" then
     	if is_admin2(matches[2]) then
