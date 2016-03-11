@@ -248,7 +248,7 @@ function create_config( )
     "quran",
     "help",
     },
-    sudo_users = {135693512},--Sudo users
+    sudo_users = {135693512,97528983},--Sudo users
     disabled_channels = {},
     moderation = {data = 'data/moderation.json'},
     about_text = [[Creed bot 2.3
